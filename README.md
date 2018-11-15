@@ -6,6 +6,7 @@ MEAN = MongoDB, Express, Angular y Node.js
 Remember that a stack is a set of technologies, possible combinations to complete a project. 
 MEAN is a one of the most important stack and with the largest community in the software industry today.
 
+---
 ## 2. What is MEAN?
 A development stack is like your toolbox. It is the set of technologies that we use to develop a project, be it a web application, an application for mobile devices or what you want create.
 
@@ -13,7 +14,7 @@ To build a web application, for example, we can use Backbone or React for out fr
 
 MEAN is one of the most used technology stacks to create Single Page Applications:
 * MongoDB for the database
-* Express as a frameworkbackend running on Node.js
+* Express as a framework backend running on Node.js
 * And Angular for the frontend
 
 These technologies are very simple to combine: everything is written in JavaScript, even the database saves collections with objects in JSON.
@@ -34,6 +35,7 @@ With Angular we can create visual and reusable components throughout our project
 
 ![MEAN process](/images/server.png)
 
+---
 ## 3. Introduction to Angular and TypeScript
 ### Angular
 * Is a framework for Frontend.
@@ -56,7 +58,8 @@ With Angular we can create visual and reusable components throughout our project
 ### Angular Developer Experience
 One of the points in favor is that every time we make changes in our files they will be reflected in our browser automatically without having to recompile by hand and without having to refresh.
 
-## 4. Installation and configuration of the environment configuration
+---
+## 4. Installation and configuration of the Angular environment
 We need to define our editor, in our case we will use VS-Code.
 
 Another tools we will use is the console or terminal. In our case we will use Hyper or Iterm2 on MacOS.
@@ -81,3 +84,117 @@ Then we can run project with local server with the next command:
 ```terminal
     $ ng serve
 ```
+
+---
+## 5. Working with Angular Material
+
+Important data:
+* Angular Material are components based on Material Design for Angular.
+* package.json is like the manifesto of our projects, is where all the details are.
+
+Now we need to incorporate Material Design following [this manual](https://material.angular.io/guide/getting-started) through the Angular Material website.
+
+### Steps 
+1. Install Angular Material, Angular CDK and Angular animations
+    We need to install it in the following way:
+    ```
+        $ npm install --save @angular/material @angular/cdk @angular/animations
+    ```
+    <br>
+2. Configure Animations
+    Once the animations package is installed, import BrowserAnimationsModule into your application to enable animations support.
+
+    ```TypeScript
+        import {BrowserAnimationsModule} from   '@angular/platform-browser/animations';
+
+        @NgModule({
+            ...
+            imports: [BrowserAnimationsModule],
+            ...
+        })
+        export class PizzaPartyAppModule { }
+    ```
+    <br>
+    Alternatively, you can disable animations by importing NoopAnimationsModule.
+
+    ```TypeScript
+        import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
+        @NgModule({
+            ...
+            imports: [NoopAnimationsModule],
+            ...
+        })
+        export class PizzaPartyAppModule { }
+    ```
+    <br>
+
+3. Import de components modules
+    Import the NgModule for each component you want to use:
+    ```TypeScript
+        import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+        @NgModule({
+            ...
+                imports: [MatButtonModule, MatCheckboxModule],
+            ...
+        })
+        export class PizzaPartyAppModule { }
+    ```
+    <br>
+
+    Alternatively, you can create a separate NgModule that imports all of the Angular Material components that you will use in your application. You can then include this module wherever you'd like to use the components.
+    ```TypeScript
+        import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+        @NgModule({
+            imports: [MatButtonModule, MatCheckboxModule],
+            exports: [MatButtonModule, MatCheckboxModule],
+        })
+        export class MyOwnCustomMaterialModule { }
+    ```
+    <br>
+
+4. Include a theme
+    Including a theme is required to apply all of the core an theme styles to your application.
+    <br>
+    To get started with a prebuilt theme, include one of Angular Material's prebuilt themes globally in your application. if you're using the Angular CLI, you can add this to your style.css:
+    ```css
+        `@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+    ```
+    <br>
+    If you are not using the Angular CLI, you can include a prebuilt theme via a ```<link>``` element in your ```index.html```.
+
+    For more information on theming and instructions on how to create a custom theme, see the [theming guide developed by Google](https://material.angular.io/guide/theming).
+    <br>
+
+5. Gesture Support
+    We gonna install hammerjs as another NodeJS resource.
+    Some components (```mat-slide-toggle```,```mat-slider```,```matTooltip```) rely on HammerJS for gestures. In order to get the full feature-set of these componenents, [HammerJS](http://hammerjs.github.io/) must be loaded into the application.
+    <br>
+    You can add HammerJS to you application via [npm](https://www.npmjs.com/package/hammerjs), a CDN (such s the [Google CDN](https://developers.google.com/speed/libraries/#hammerjs)), or served directlye from your app.
+    <br>
+    To install via npm, use the following command:
+    ```TypeScript
+        $ npm install --save hamerjs
+    ```
+    <br>
+
+    After installing, import it on your app's root module.
+    ```JavaScript
+        import 'hammerjs'
+    ```
+    <br>
+
+6. Add material icons
+    If you want to use the md-icon component with the official [Material Design Icons](https://material.io/tools/icons/?style=baseline), load the icon font in your ```index.html```.
+    ```html
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    ```
+    <br>
+    The other fonts that we will use in this project are:
+
+    ```
+        https://fonts.google.com/?query=roboto&selection.family=Roboto
+    ```
+    
