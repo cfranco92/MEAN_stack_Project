@@ -34,4 +34,24 @@ With Angular we can create visual and reusable components throughout our project
 
 ![MEAN process](/images/server.png)
 
+## 3. Introduction to Angular and TypeScript
+### Angular
+* Is a framework for Frontend.
+* Has option actually to run frome Backend y can re-use the code.
+* It allows us to organize the files that we are going to have and to separate the responsibilities of each file. It allows us to separate our application into reusable components.
+* This framework, of what is going to be treated more is about components. The componenents are visual units reusable and with cretain defined behavior.
+* Another thing that Angular is going to solve is routing, that is, the routing system.
+* Angular will also give us the services. Are ways to connect with the Backend, from there we will ask for certain data that the Frontend need to display on the screen.
+* Angular offers a system of template. Each component will have associated a template or view that will be the HTML structure that it has.
+* From Angular it is possible that we can define our own labels to define the reusable components.
+* Another thing that Angular allows us are the modules. They are complete libraries with components and directives already armed or pre-established. An example is Angular Material that is what we will be using for our project.
+* CLI = Command Line Interface or Command Line Interface.
+* Google is behind Angular. It's the Google developer who support this Open Source library.
+* Angular is very adapted and has a very large community around.
 
+### TypeScript
+* It's a super set of JavaScript. It will help us to expand JavaScript capabilities a bit, it will incorporate a type check to correct errors. It will incorporate a type check to correct errors.
+* It is an ideal technology for work in team projects.
+
+### Angular Developer Experience
+One of the points in favor is that every time we make changes in our files they will be reflected in our browser automatically without having to recompile by hand and without having to refresh.
