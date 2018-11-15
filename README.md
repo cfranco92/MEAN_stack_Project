@@ -55,3 +55,29 @@ With Angular we can create visual and reusable components throughout our project
 
 ### Angular Developer Experience
 One of the points in favor is that every time we make changes in our files they will be reflected in our browser automatically without having to recompile by hand and without having to refresh.
+
+## 4. Installation and configuration of the environment configuration
+We need to define our editor, in our case we will use VS-Code.
+
+Another tools we will use is the console or terminal. In our case we will use Hyper or Iterm2 on MacOS.
+
+Another tool we will use is the Angular CLI, with commands to management Angular environment.
+
+We need to install the newest version of Node that we can find on the [official website of Node community](https://nodejs.org/en/).
+
+Also we need to install Angular console and other features of Angular from the [official website of Angular](https://cli.angular.io/).
+```terminal
+    $ npm install -g @angular/cli
+```
+
+We can get more information about Angular in NPM web in the [section of Angular/CLI in NPM](https://www.npmjs.com/package/@angular/cli).
+
+Now we can create a new project of Angular with the next command:
+```
+    $ ng new [projectName]
+```
+
+Then we can run project with local server with the next command:
+```terminal
+    $ ng serve
+```
