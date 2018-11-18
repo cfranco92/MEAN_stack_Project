@@ -271,6 +271,7 @@ Now, we need to add style in ```styles.css``` to our toolbar and add spaces betw
     }
 ```
 <br>
+
 ```css
     body {
         margin: 0;
@@ -278,3 +279,56 @@ Now, we need to add style in ```styles.css``` to our toolbar and add spaces betw
     }
 ```
 <br>
+
+---
+## 7. Details of questions for the project
+In this section we are going to create details of questions.
+
+We invite you to follow the project in [Github](https://github.com/cfrancobedoya/MEAN_stack_Project).
+<br>
+
+There are two ways to organize the structure of the files within our project:
+    1. Following the functionality of each of the files.
+    2. We have certain models, certain screens, certain components or certain services. We can store everything in a folder accoding to the type.
+
+We create the following files:
+1. ```question-detail.component.ts```
+    ```TypeScript
+            import { Component } from '@angular/core';
+
+            @Component({
+                selector: 'app-question-detail',
+                templateUrl: './question-detail.component.html'
+            })
+            export class QuestionDetailComponent {
+
+            }
+    ```
+    <br>
+
+2. ```question-detail.component.html```
+    ```html
+        Una nueva pregunta
+    ```
+    <br>
+
+3. ```app.component.html```
+    ```html
+        <mat-toolbar color="primary">
+            <span>MedellínOverflow </span>
+            <span class="space"></span>
+            <mat-icon>account_circle</mat-icon>
+        </mat-toolbar>
+        <app-question-detail></app-question-detail>
+    ```
+    <br>
+
+4. In ```app.module.ts``` file we added this:
+    ```TypeScript
+        import { QuestionDetailComponent } from './question/question-detail.component';
+
+        declarations: [
+            AppComponent,
+            QuestionDetailComponent
+        ]
+    ```
