@@ -96,12 +96,14 @@ Now we need to incorporate Material Design following [this manual](https://mater
 
 ### Steps 
 1. Install Angular Material, Angular CDK and Angular animations
+
     We need to install it in the following way:
     ```
         $ npm install --save @angular/material @angular/cdk @angular/animations
     ```
     <br>
 2. Configure Animations
+
     Once the animations package is installed, import BrowserAnimationsModule into your application to enable animations support.
 
     ```TypeScript
@@ -130,6 +132,7 @@ Now we need to incorporate Material Design following [this manual](https://mater
     <br>
 
 3. Import de components modules
+
     Import the NgModule for each component you want to use:
     ```TypeScript
         import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -156,6 +159,7 @@ Now we need to incorporate Material Design following [this manual](https://mater
     <br>
 
 4. Include a theme
+
     Including a theme is required to apply all of the core an theme styles to your application.
     <br>
     To get started with a prebuilt theme, include one of Angular Material's prebuilt themes globally in your application. if you're using the Angular CLI, you can add this to your style.css:
@@ -169,6 +173,7 @@ Now we need to incorporate Material Design following [this manual](https://mater
     <br>
 
 5. Gesture Support
+
     We gonna install hammerjs as another NodeJS resource.
     Some components (```mat-slide-toggle```,```mat-slider```,```matTooltip```) rely on HammerJS for gestures. In order to get the full feature-set of these componenents, [HammerJS](http://hammerjs.github.io/) must be loaded into the application.
     <br>
@@ -187,6 +192,7 @@ Now we need to incorporate Material Design following [this manual](https://mater
     <br>
 
 6. Add material icons
+
     If you want to use the md-icon component with the official [Material Design Icons](https://material.io/tools/icons/?style=baseline), load the icon font in your ```index.html```.
     ```html
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -197,4 +203,78 @@ Now we need to incorporate Material Design following [this manual](https://mater
     ```
         https://fonts.google.com/?query=roboto&selection.family=Roboto
     ```
+
+---
+## 6. Construction header of the application
+In this section we will configure the toolbar for our application.
+
+Now we are going to include mat-toolbar in the ```material.module.ts``` file.
+
+```TypeScript
+    import {MatToolbarModule} from '@angular/material';
     
+    const modules = [
+        MatToolbarModule,
+        MatIconModule
+    ];
+```
+<br>
+
+Then, in ```app.component.html``` file, we will include the following example:
+```html
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Custom Toolbar</span>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <span>Second Line</span>
+            <span class="example-spacer"></span>
+            <mat-icon class="example-icon">verified_user</mat-icon>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row>
+            <span>Third Line</span>
+            <span class="example-spacer"></span>
+            <mat-icon class="example-icon">favorite</mat-icon>
+            <mat-icon class="example-icon">delete</mat-icon>
+        </mat-toolbar-row>
+    </mat-toolbar>
+```
+<br>
+
+Then, we should search one icon in this link, to add to the toolbar.
+```url
+    https://material.io/tools/icons
+```
+<br>
+
+Then, in material.module.ts we need to add this code:
+```TypeScript
+    import { MatIconModule} from '@angular/material';
+
+    const modules = [        
+        MatIconModule
+    ];
+
+    @NgModule({
+        imports: [modules],
+        exports: [modules],
+    })
+```
+<br>
+
+Now, we need to add style in ```styles.css``` to our toolbar and add spaces between words in ```app.component.css```.
+```css
+    .space {
+        flex: 1 1 auto;
+    }
+```
+<br>
+```css
+    body {
+        margin: 0;
+        font-family: 'Roboto';
+    }
+```
+<br>
